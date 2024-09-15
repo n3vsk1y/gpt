@@ -1,0 +1,12 @@
+#root {
+	margin: 0;
+	padding: 2rem;
+	text-align: center;
+    height: 200vh;
+}
+
+main {
+    width: 100%;
+    margin-top: 8rem;
+    /* border: 1px solid red; */
+}

@@ -1,0 +1,62 @@
+.block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 2rem 0;
+
+    font-size: 1.4rem;
+	/* border: solid red 2px; */
+}
+
+.text-block {
+    min-width: 100px;
+    height: 2rem;
+    position: relative;
+    /* text-align: end; */
+    /* border: solid green 2px; */
+}
+
+.text-block > p {
+    position: absolute;
+    right: 1rem;
+    top: -1.4rem;
+}
+
+.editable-block {
+	min-height: 1rem;
+	width: calc(100% - 2rem);
+
+	cursor: text;
+	caret-color: transparent;
+
+    text-align: start;
+
+	/* border: solid red 2px; */
+}
+
+.editable-block::after {
+	content: '_';
+    position: absolute;
+    top: var(--caret-y, 100%);
+    left: var(--caret-x, 0);
+    animation: blink 1s step-start infinite;
+    pointer-events: none;
+}
+
+.editable-block:not(.focused)::after {
+    opacity: 0;
+}
+
+.editable-block:focus {
+	outline: none;
+}
+
+.editable-block > p {
+    margin: 0;
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}
