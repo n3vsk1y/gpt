@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import './UserMessageBlock.css'
+import checkmark from '../../assets/checkmark.svg'
 
 export default function UserMessageBlock() {
 	const editableRef = useRef(null)
@@ -29,24 +30,28 @@ export default function UserMessageBlock() {
 		return () => {
 			editableElement.removeEventListener('keyup', updateCaretPosition)
 			editableElement.removeEventListener('click', updateCaretPosition)
-			editableElement.removeEventListener('focus', () =>
-				setHasFocus(true)
-			)
-			editableElement.removeEventListener('blur', () =>
-				setHasFocus(false)
-			)
+			editableElement.removeEventListener('focus', () => setHasFocus(true))
+			editableElement.removeEventListener('blur', () => setHasFocus(false))
 		}
 	}, [])
 
+	const handleButtonClick = () => {
+		console.log('Button clicked')
+		if (editableRef.current) {
+			editableRef.current.blur()
+		}
+	}
+
 	return (
-		<div className="block">
-			<div className="text-block">
+		<div className='block'>
+			<div className='text-block'>
 				<p>user &gt;</p>
 			</div>
 
 			<div
 				className={`editable-block ${hasFocus ? 'focused' : ''}`}
-				contentEditable="true"
+				contentEditable='true'
+                spellCheck='false'
 				ref={editableRef}
 				style={{
 					'--caret-x': `${caretPosition.x}px`,
@@ -54,7 +59,14 @@ export default function UserMessageBlock() {
 				}}
 			>
 				<p>user_console</p>
+				{/* <p>&nbsp;</p> */}
 			</div>
+
+			{hasFocus && (
+				<button onClick={handleButtonClick}>
+					<img src={checkmark} alt='Checkmark' />
+				</button>
+			)}
 		</div>
 	)
 }
