@@ -1,0 +1,29 @@
+.ai-block {
+	min-width: 100px;
+	height: 2rem;
+	position: relative;
+	/* border: solid green 2px; */
+}
+
+.ai-block > p {
+	position: absolute;
+	right: 1rem;
+	top: -1.4rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.response-block {
+	min-height: 1rem;
+	width: calc(100% - 2rem);
+	max-width: 93%;
+
+	cursor: text;
+	caret-color: transparent;
+
+	text-align: start;
+    font-weight: bold;
+    font-style: italic;
+
+	/* border: solid red 2px; */
+}

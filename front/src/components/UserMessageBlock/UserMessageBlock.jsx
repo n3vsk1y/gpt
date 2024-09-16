@@ -44,7 +44,7 @@ export default function UserMessageBlock() {
 
 	return (
 		<div className='block'>
-			<div className='text-block'>
+			<div className='user-block'>
 				<p>user &gt;</p>
 			</div>
 
@@ -55,11 +55,11 @@ export default function UserMessageBlock() {
 				ref={editableRef}
 				style={{
 					'--caret-x': `${caretPosition.x}px`,
-					'--caret-y': `${caretPosition.y}px`,
+					'--caret-y': `calc(${caretPosition.y}px - 3px)`,
 				}}
 			>
-				<p>user_console</p>
-				{/* <p>&nbsp;</p> */}
+				{/* <p>Привет!</p> */}
+				<p>&nbsp;</p>
 			</div>
 
 			{hasFocus && (

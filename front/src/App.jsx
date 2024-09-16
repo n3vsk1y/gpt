@@ -12,8 +12,15 @@ export default function App() {
 		<>
 			<Header />
 			<main>
+				<UserMessageBlock />
+				<AiMessageBlock />
                 <UserMessageBlock />
-            </main>
+				<AiMessageBlock />
+                <UserMessageBlock />
+				<AiMessageBlock />
+                <UserMessageBlock />
+				<AiMessageBlock />
+			</main>
 		</>
 	)
 }
