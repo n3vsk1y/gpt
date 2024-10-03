@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
+import api from './Api'
 
 import Header from './components/Header/Header'
 import UserMessageBlock from './components/UserMessageBlock/UserMessageBlock'
+import EditableUserMessageBlock from './components/EditableUserMessageBlock/EditableUserMessageBlock'
 import AiMessageBlock from './components/AiMessageBlock/AiMessageBlock'
 
 export default function App() {
@@ -12,13 +14,7 @@ export default function App() {
 		<>
 			<Header />
 			<main>
-				<UserMessageBlock />
-				<AiMessageBlock />
-                <UserMessageBlock />
-				<AiMessageBlock />
-                <UserMessageBlock />
-				<AiMessageBlock />
-                <UserMessageBlock />
+				<EditableUserMessageBlock />
 				<AiMessageBlock />
 			</main>
 		</>
